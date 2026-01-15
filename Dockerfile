@@ -33,5 +33,6 @@ RUN \
   chmod 700 /home/app/.ssh
 
 COPY --from=build /build/updater /srv/updater
+COPY --chmod=755 init.sh /srv/init.sh
 WORKDIR /srv
 CMD ["/srv/updater"]
